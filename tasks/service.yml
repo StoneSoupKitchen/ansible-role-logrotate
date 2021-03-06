@@ -1,0 +1,6 @@
+---
+- name: Enable logrotate
+  service:
+    name: logrotate
+    enabled: yes
+

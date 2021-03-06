@@ -1,0 +1,11 @@
+# Install the logrotate package.
+---
+- name: Define logrotate_package
+  set_fact:
+    logrotate_package: "{{ __logrotate_package }}"
+  when: logrotate_package is not defined
+
+- name: Install logrotate
+  apt:
+    name: "{{ logrotate_package }}"
+    state: "{{ logrotate_package_state }}"

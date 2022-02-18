@@ -17,7 +17,7 @@ and their default values.
 
 | Name                     | Default Value | Description                      |
 | ------------------------ | ------------- | -------------------------------- |
-| `logrotate_package` | systemd-journal-remote | Name of the logrotate package. Use `name=ver` format to pin. |
+| `logrotate_package` | logrotate | Name of the logrotate package. Use `name=ver` format to pin. |
 | `logrotate_package_state` | present | Installation state for the logrotate package. |
 
 ## Examples

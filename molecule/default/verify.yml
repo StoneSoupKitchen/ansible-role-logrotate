@@ -1,0 +1,16 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+  - name: Collect host package information
+    package_facts:
+      manager: "auto"
+
+  - name: Package logrotate should be installed
+    package:
+      name: logrotate
+      state: present
+    check_mode: true
+    register: install
+    failed_when: (install is changed) or (install is failed)

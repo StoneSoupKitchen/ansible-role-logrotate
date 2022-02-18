@@ -3,4 +3,5 @@
   service:
     name: logrotate
     enabled: yes
-
+  when:
+    - ansible_virtualization_type != "docker"

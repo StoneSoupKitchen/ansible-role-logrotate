@@ -14,3 +14,25 @@
     check_mode: true
     register: install
     failed_when: (install is changed) or (install is failed)
+
+  - name: File /etc/logrotate.conf should exist with correct permissions
+    file:
+      path: /etc/logrotate.conf
+      state: file
+      owner: root
+      group: root
+      mode: '0644'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)
+
+  - name: Directory /etc/logrotate.d should exist with correct permissions
+    file:
+      path: /etc/cron.hourly
+      state: directory
+      owner: root
+      group: root
+      mode: '0755'
+    check_mode: true
+    register: config
+    failed_when: (config is changed) or (config is failed)

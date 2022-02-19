@@ -6,3 +6,11 @@
     owner: root
     group: root
     mode: '0644'
+
+- name: Configure /etc/logrotate.d
+  file:
+    state: directory
+    path: /etc/logrotate.d
+    owner: root
+    group: root
+    mode: '0755'
